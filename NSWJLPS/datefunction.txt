@@ -1,0 +1,28 @@
+<p><b> The following court orders have passed and need updating </b></p>
+								<table>
+								<tr><td><b> Name </b></td><td><b> Offence </b></td><td><b> Edit </b></td></tr> 
+								
+								<% 
+												
+								Dim content
+								Set content = Server.CreateObject("ADODB.RecordSet")
+
+								Dim currentDate = Date
+	
+								checkSQL = "SELECT id, firstname, lastname, offencename FROM offence INNER JOIN courtorder ON offence.id=courtorder.offenceid WHERE courtorder.verdict IS NULL AND courtorder.courtdate <" currentDate ""
+	
+								content.Open checkSQL, nswjlps_STRING
+	
+								Do Until content.EOF	
+									fname = content("firstname")														
+									lname = content("lastname")
+									oname = content("offencename")
+									Response.write "<tr><td> " &  fname & " " &  lname & " </td><td> " &  oname & " </td><td> <a href='courteditco.asp'> Edit </a href></td></tr>"
+									content.movenext
+								Loop
+				
+								%>
+								</table>
+								
+								
+								'" Now() "' <-- maybe single quotes

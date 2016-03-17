@@ -1,0 +1,20 @@
+
+Database
+
+Offence Table:
+	ID - from Auotnumber to Number	
+	added OffenceTypeID - number
+	Postcode - from number to text
+	LicenseNumber - to LicenceNumber
+	added OffenderPhone - text
+	
+	
+CourtOrder:
+	OffenceID - from AutoNumber to number
+	CourtID to CourtName (CourtID is not required if we are using dropdown boxes)
+	
+	
+
+	(Not changed yet)
+AddOffence
+	streetNo, street name - OffenderAddress
